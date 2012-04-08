@@ -1,0 +1,101 @@
+@charset "utf-8";
+
+body{position:relative;overflow:hidden;zoom:1;}
+
+#mainContent{
+	position:absolute;
+	height:100%;
+	z-index:1;
+}
+
+#mainIndex,#mainLeft,#mainRight,#mainRegister{
+	height:100%;
+	background:#f7f5f5 url("bg.gif");
+    position: relative;
+    zoom:1;
+    overflow: hidden;
+}
+
+#mainContain{
+    width:400px;
+    margin: 100px auto 0;
+}
+#mainContain .logo{
+    text-align: center;
+    font-family:' 微软雅黑';
+    font-size:60px;
+    color:#B0C4DE;
+    text-shadow: 1px 1px 3px #B0C4DE;
+}
+#mainContain .logo .logoFirstWord{
+    font-size: 90px;
+    text-shadow: 1px 1px 5px #B0C4DE;
+}
+#mainContain .subLogo{
+    text-align: right;
+    font-size:14px;
+    text-shadow:1px 1px 1px #B9D3EE;
+    color:#9FB6CD;
+}
+#mainContain .login form label{
+      display: block;
+      color:#999;
+    margin-bottom:3px;
+}
+#mainContain .login .rememberMe{
+    margin-top:10px;
+}
+#mainContain .login .rememberMe label{
+    display: inline;
+    position: relative;
+    top:-2px;
+}
+#mainContain .login .forgetPwd{
+    margin-top:10px;
+}
+#mainContain .login .submitButton:hover{
+    background-color:#4F94CD;
+}
+#mainContain .login .submitButton{
+    width:100%;
+    margin-top:15px;
+}
+#mainContain .login .submitButton:hover{
+    color:#fff;
+}
+#mainRegister{
+	width:0;
+	position:absolute;
+	z-index:-99;
+}
+
+#mainIndex #leftSlide{
+    position: absolute;
+    left:-30px;
+    top:50%;
+}
+
+#mainIndex #leftSlide .leftSide{
+    background-image: url("resultset_previous.png");
+}
+
+#mainIndex #rightSlide{
+    position: absolute;
+    right:-30px;
+    top:50%;
+}
+#mainIndex #rightSlide .rightSide{
+    padding-left:0;
+    padding-right:21px;
+    background-image: url("resultset_next.png");
+    background-position: right center;
+}
+#mainIndex #register{
+    position: absolute;
+    bottom:0;
+    left:50%;
+    margin-left:-44px;
+}
+#mainIndex #register .registerButton{
+    padding: 0 20px;
+}

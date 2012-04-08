@@ -1,0 +1,122 @@
+/* 清理浮动 */
+.clearfix:after {
+	visibility:hidden;
+	display:block;
+	font-size:0;
+	content:" ";
+	clear:both;
+	height:0;
+}
+.clearfix {
+	zoom:1; /* for IE6 IE7 */
+}
+
+/* 隐藏, 通常用来与 JS 配合 */
+body .hide {
+	display:none;
+}
+
+/* 设置内联, 减少浮动带来的bug */
+.left,.right {
+	display:inline;
+}
+.left {
+	float:left;
+}
+.right {
+	float:right;
+}
+
+/* 设置字体及其他通用样式 */
+.bold{
+    font-weight: bold;
+}
+/* 设置devise提示信息的位置 */
+span.notice{
+	font-family:"微软雅黑";
+	font-size:15px;
+	font-weight:bold;
+	color:#ff8066;
+	border:3px solid #e9f5e9;
+	border-radius:8px;
+	padding:2px 15px;
+	position:absolute;
+	left:50%;
+	top:50%;
+	z-index:9999;
+	margin:-17px 0 0 -51px;
+	background-color:#fff;
+}
+
+/* 通用表单样式 */
+
+input, textarea {
+	padding: 5px;
+	border: solid 1px #E5E5E5;
+	outline: 0;
+	background: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #EEEEEE), to(#FFFFFF));
+	background: -moz-linear-gradient(top, #FFFFFF, #EEEEEE 1px, #FFFFFF 25px);
+	box-shadow: rgba(0,0,0, 0.1) 0 0 8px;
+	}
+
+input:hover, textarea:hover,
+input:focus, textarea:focus {
+	border-color: #C9C9C9;
+    box-shadow: rgba(0,0,0, 0.1) 0 0 8px;
+	}
+
+.submit input {
+	background: #617798;
+	border: 0;
+	font-size: 14px;
+	color: #ccc;
+	border-radius: 5px;
+    cursor: pointer;
+	}
+
+/*sexy button*/
+.sexybutton {
+	vertical-align: middle;
+	text-shadow: 1px 1px 2px rgba(0,0,0,0.20);
+	background: none;
+	border: none;
+	white-space: nowrap;
+	cursor: pointer;
+	user-select: none;
+	-moz-user-select: none;
+
+	/* Fix extra width padding in IE */
+	_width: 0;
+	overflow: visible;
+}
+
+.sexybutton span {
+	display: block;						/* Prevents :active from working in IE--oh well! */
+	height: 24px;
+	padding-right: 12px;
+	background-repeat: no-repeat;
+	background-position: right top;
+}
+
+.sexybutton span span {
+	padding-right: 0;
+	padding-left: 12px;
+	line-height: 24px;
+	background-position: left top;
+}
+.sexybutton span span {
+	background-image: url("button_left.gif");
+}
+.sexybutton span {
+	background-image: url("button_right.gif");
+}
+
+.sexybutton span span span {
+	padding-left: 21px;
+	background-image: none;
+	background-repeat: no-repeat;
+	background-position: left center;
+	/* IE6 still requires a PNG transparency fix */
+	/* _background-image: none;		Or just hide icons from the undeserving IE6 */
+	/* _padding-left: 0;					Or just hide icons from the undeserving IE6 */
+}
