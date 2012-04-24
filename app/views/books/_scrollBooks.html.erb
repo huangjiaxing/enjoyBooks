@@ -1,0 +1,18 @@
+<div id = "showBooks">
+  <% @popbooks.each do |popbook| %>
+       <div class="area clearfix">
+         <div class="left leftSide">
+            <%= image_tag(popbook.imageurl,:class=> "imageSize") %>
+         </div>
+         <div class="left rightSide">
+                <h3><%= link_to popbook.name, book_path(popbook) %></h3>
+                <p class="biref ellipsis">此处为简介，暂时不提供</p>
+                <div class="userAdvise">
+                  <h4>用户评价</h4>
+                  <p>此处为用户评价，功能会在之后做好</p>
+                </div>
+         </div>
+       </div>
+  <% end %>
+<div id="BooksController"></div>
+</div>

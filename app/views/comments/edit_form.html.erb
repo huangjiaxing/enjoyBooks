@@ -1,0 +1,8 @@
+<div id="EditComment" style="background:#ff3">
+	<%= form_for(@comment)  do |f|%>
+		<%= f.text_area :comment  %>
+		<div class="submit">
+		<%= f.submit "提交修改" %>
+		</div>
+	<% end %>
+</div>

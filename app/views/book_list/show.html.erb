@@ -1,0 +1,9 @@
+<ul>
+	<% if @books.blank? %>
+		<div>没有找到相关书籍</div>
+	<% else %>
+	<% @books.each do |book| %>
+		<li><%= book.name %></li>
+	<% end %>
+	<% end %>
+</ul>

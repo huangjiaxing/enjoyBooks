@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>享书网</title>
+  <meta charset="utf-8" />
+  <%= stylesheet_link_tag    "application" , "book" %>
+  <%= javascript_include_tag "application" , "book" ,"flexpaper_flash"%>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<%= render 'share/header' %>
+<div id="mainContent" class="clearfix">
+<% unless notice.blank? %>
+ <span class="notice"><%= notice %></span>
+<% end %>
+
+
+<%= yield %>
+</div>
+</body>
+</html>

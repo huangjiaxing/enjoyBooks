@@ -1,0 +1,250 @@
+#header{
+    text-align: right;
+    height: 40px;
+    line-height: 40px;
+    padding-right: 10px;
+    background-color: #f1f1f1;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 1px 2px 5px #eee;
+    text-shadow: 1px 1px 1px #ccc;
+    margin-bottom: 20px;
+	position:relative;
+	zoom:1;
+}
+
+#header a{
+    margin-left: 10px;
+}
+
+#header #search{
+    position:absolute;
+	left:60%;
+	top:0;
+}
+#header #search input{
+    padding:3px 5px;
+}
+#header .submit input{
+	font-size:12px;
+	color:#eee;
+}
+
+#mainContent{
+    width:960px;
+    margin: 0 auto;
+}
+
+#mainContent .leftContent{
+	width:300px;
+}
+#mainContent .rightContent{
+	width:650px;
+}
+#mainContent .profile{
+    height: 100px;
+}
+
+#mainContent .profile .peopleHead{
+    width:80px;
+    height: 80px;
+    float: left;
+    display: inline;
+    margin-right:20px;
+}
+
+#mainContent .profile .peopleInfo{
+    overflow: hidden;
+}
+#mainContent .profile h3{
+     font-size: 16px;
+    margin-bottom: 10px;
+}
+#mainContent .profile .peopleInfo p{
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    margin-bottom:10px;
+}
+#mainContent .profile .peopleInfo .mood{
+    color:cadetBlue;
+}
+
+#mainContent #waterFull{
+    position: relative;
+    zoom:1;
+	margin-top:20px;
+	padding:0 1px;
+}
+#mainContent #waterFull li{
+    width:162px;
+}
+#mainContent #waterFull .boxContent{
+	margin:6px;
+	background:#F7F7F7 url("boxsh.gif") no-repeat bottom right;
+	border:1px solid #efeff0;
+	border-bottom:none;
+}
+
+#mainContent #showBooks{
+    position: relative;
+    zoom:1;
+    height:172px;
+    padding-bottom:20px;
+}
+#mainContent #BooksController{
+    width:100%;
+    position:absolute;
+    left:0;
+    bottom:0;
+    height:20px;
+    line-height:20px;
+    text-align:center;
+}
+#mainContent #BooksController span{
+    padding:4px;
+    margin:0 2px;
+    border:1px solid transparent;
+    font-size:0;
+    background-color:#edf3f2;
+    cursor:pointer;
+}
+#mainContent #BooksController span.selected{
+    background-color:#ec6d77;
+    border:1px ridge #f13731;
+    box-shadow:0 1px 1px #d38c8c;
+}
+#mainContent #showBooks .area{
+    width:392px;
+    height:170px;
+    position: absolute;
+    top:0;
+    left:0;
+    z-index:1;
+    opacity:1;
+    background: #fafafa;
+    border: 1px solid #ddd;
+}
+#mainContent .area .leftSide,#mainContent .area .rightSide{
+     padding: 15px 10px;
+}
+
+#mainContent .area .leftSide .imageSize{
+    width:70px;
+    height:90px;
+    vertical-align: top;
+}
+#mainContent .area .rightSide {
+	width:270px;
+}
+#mainContent .area .rightSide h3 a{
+	font-size:14px;
+	text-decoration:none;
+}
+#mainContent .area .rightSide .biref{
+	color:#999;
+	margin-top:5px;
+}
+#mainContent .area .rightSide .userAdvise{
+	height:90px;
+	margin-top:5px;
+	border:1px solid #ddd;
+	box-shadow:2px 1px 3px #eee;
+	background-color:#fff;
+}
+#mainContent .area .userAdvise h4{
+	padding:1px 4px;
+	border-bottom:1px solid #ccc;
+}
+#mainContent .area .userAdvise p{
+	padding:1px 4px;
+	color:#555;
+	text-shadow:0 1px 3px #ddd;
+}
+
+#bookInfo{
+	width:270px;
+	height:680px;
+	text-align:center;
+}
+#bookInfo .bookOtherInfo{
+	margin-top:10px;
+}
+#bookInfo .bookOtherInfo h3{
+	font-size:16px;
+	font-weight:bold;
+	color:#555;
+}
+#bookInfo #evaluation{
+	margin-top:30px;
+}
+#bookInfo #evaluation h3{
+	text-align:left;
+	padding:3px 10px;
+	font-size:14px;
+	background-color:#eee;
+	border:1px dashed #ddd;
+	color:#006400;
+}
+
+#bookInfo #evaluation .addComment{
+	margin-top:10px;
+	position:relative;
+}
+
+#bookInfo #evaluation .hideForm{
+	position:absolute;
+	top:40px;
+	left:0;
+}
+#bookInfo #evaluation .hideForm .new_comment{
+	margin:10px 0 0 20px;
+}
+#bookInfo #evaluation .hideForm textarea{
+	resize:none;
+}
+#bookInfo #evaluation .hideForm .submit input{
+	width:80%;
+}
+#bookInfo #evaluation .myComment{
+	margin:15px 0;
+	position:relative;
+	zoom:1;
+}
+#bookInfo #evaluation .myComment .commentHandle{
+	position:absolute;
+	top:5px;
+	right:5px;
+}
+#bookInfo #evaluation .myComment #EditComment{
+	position:absolute;
+	top:0;
+	
+}
+
+#bookInfo #evaluation h4{
+	text-align:left;
+	padding:5px;
+	color:#7D9EC0;
+}
+#bookInfo #evaluation p{
+	text-align:left;
+	padding:5px;
+	color:#555;
+	text-shadow:0 1px 1px #ddd;
+}
+#bookInfo #evaluation .commentsList{
+	text-align:left;
+}
+#bookInfo #evaluation .commentsList li{
+	padding-left:5px;
+	background-color:#f5fffa;
+	border:1px dashed #e0eeee;
+}
+#bookInfo #evaluation .commentsList p{
+	text-align:right;
+}
+
+
+
+
+
