@@ -1,12 +1,12 @@
 class BooksController < ApplicationController
-
+  layout 'main'
   before_filter :authenticate_user!
 
   # GET /books
   # GET /books.json
   def index
     @books = Book.all
-
+    @popbooks = Book.limit(8)
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @books }
@@ -17,7 +17,9 @@ class BooksController < ApplicationController
   # GET /books/1.json
   def show
     @book = Book.find(params[:id])
-
+	@mycomment = Comment.find(:all ,:conditions =>["book_id = ? and user_id = ?", @book.id , current_user.id])
+	@comment = Comment.new
+	@comments = Comment.find(:all , :conditions =>["book_id =? and user_id != ?" ,@book.id ,current_user.id])
     respond_to do |format|
       format.html # show.html.erb
       format.json { render :json => @book }

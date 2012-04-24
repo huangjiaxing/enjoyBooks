@@ -1,47 +1,48 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @book.name %>
-</p>
+<div class="left" id="bookInfo">
+<%= image_tag(@book.imageurl) %>
+<div class="bookOtherInfo">
+  <h3 class="ellipsis"><%= @book.name %></h3>
+</div>
+<div id="evaluation">
+	<h3>评价</h3>
+	<% if @mycomment.blank? %>
+	<div class="addComment">
+	<button class="commonButton gray" id="addCommentButton">发表评论</button>
+	<div class="hide hideForm">
+		<%= form_for(@comment) do |f| %>
+			<%= f.text_area :comment ,:cols=>"40",:rows=>"5"%>
+			<%= f.hidden_field :book_id ,:value => @book.id %> 
+			<div class="submit">
+			<%= f.submit  "发表" %>
+			</div>
+		<% end %>
+	</div>
+	</div>
+	<% else %>
+		<div class="myComment">
+		<h4>我的评论</h4>
+		<p><%= @mycomment.last.comment %></p>
+		<div class="commentHandle hide"><%= link_to '编辑', @mycomment.last ,:class=>"ajaxEdit"  %> | <%= link_to '删除', @mycomment.last, :confirm => '确定删除此评价?', :method => :delete %></div>
+		</div>
+	<% end %>
+	<div id="otherComments">
+	 <h4>大家怎么说</h4>
+		<ul class="commentsList">
+			<% @comments.each do |comment| %>
+				<li><%= comment.comment %><p>--------<%=link_to comment.user.name ,"#"%></p></li>
+			<% end %>
+		</ul>
+	</div>
+ </div>
+</div>
 
-<p>
-  <b>Url:</b>
-  <%= @book.url %>
-</p>
+ <div class="right">
+		<%= render "flash_book" %>
+ </div>
 
- <div style="position:absolute;left:10px;top:10px;">
-	        <a id="viewerPlaceHolder" style="width:680px;height:480px;display:block"></a>
-
-	        <script type="text/javascript">
-				var fp = new FlexPaperViewer(
-						 '/FlexPaperViewer',
-						 'viewerPlaceHolder', { config : {
-						 SwfFile : escape('/<%= @book.url %>'),
-						 Scale : 0.6,
-						 ZoomTransition : 'easeOut',
-						 ZoomTime : 0.5,
-						 ZoomInterval : 0.2,
-						 FitPageOnLoad : true,
-						 FitWidthOnLoad : false,
-						 FullScreenAsMaxWindow : false,
-						 ProgressiveLoading : false,
-						 MinZoomSize : 0.2,
-						 MaxZoomSize : 5,
-						 SearchMatchAll : false,
-						 InitViewMode : 'Portrait',
-						 PrintPaperAsBitmap : false,
-
-						 ViewModeToolsVisible : true,
-						 ZoomToolsVisible : true,
-						 NavToolsVisible : true,
-						 CursorToolsVisible : true,
-						 SearchToolsVisible : true,
-
-  						 localeChain: 'en_US'
-						 }});
-	        </script>
-        </div>
-
+ 
+ 
+ <div class="clearfix"></div>
 <%= link_to 'Edit', edit_book_path(@book) %> |
 <%= link_to 'Back', books_path %>

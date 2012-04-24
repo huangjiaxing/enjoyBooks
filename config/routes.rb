@@ -1,6 +1,10 @@
 Xiangshuwang::Application.routes.draw do
 	
-  resources :books
+  match "/book_list/show"  => "book_list#show" ,:via => :post
+
+  resources :comments
+  
+  resources :books 
 
   devise_for :users do
 	  get '/users/sign_out' => 'devise/sessions#destroy'

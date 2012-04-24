@@ -15,6 +15,24 @@ body{position:relative;overflow:hidden;zoom:1;}
     zoom:1;
     overflow: hidden;
 }
+#mainRight{
+	background:#0d7bd5 url('glow.png') no-repeat center center;
+}
+#mainRight .reg{
+	position:absolute;
+	top:50%;
+	left:50%;
+	margin:-14px 0 0 -57px;
+}
+#mainRight .reg .register{
+	font-size:14px;
+	color:rgba(255, 255, 255, .7);
+	display:block;
+	background:rgba(0, 0, 0, .1);
+	padding:3px 15px;
+	border-radius:50px;
+	box-shadow:0 1px 0 rgba(255,255,255,.15),0px 1px 3px rgba(0,0,0,.2) inset;
+}
 
 #mainContain{
     width:400px;
@@ -98,4 +116,75 @@ body{position:relative;overflow:hidden;zoom:1;}
 }
 #mainIndex #register .registerButton{
     padding: 0 20px;
+}
+
+#signIn,#signUp{
+    width:960px;
+    margin: 100px auto 0;
+    padding: 20px 30px 50px;
+    background-color: #f3f3f3;
+    border-radius: 20px;
+    box-shadow: 4px 5px 10px #bbb;
+}
+
+#signIn h2,#signUp h2{
+    font-size:14px;
+    font-weight: bold;
+    color:#555;
+}
+
+#new_user{
+    margin-top: 20px;
+    float: left;
+    display: inline;
+    padding-left:30px;
+}
+
+#new_user label{
+    margin-right: 10px;
+}
+
+#new_user div{
+    margin: 7px 0;
+}
+#new_user .rememberMe{
+    padding-left:40px;
+    margin-top:15px;
+}
+#new_user .rememberMe label{
+    position: relative;
+    top:-2px;
+}
+#new_user .rememberMe .submit{
+    padding: 2px 30px;
+    margin-left:25px;
+    cursor: pointer;
+}
+#signIn .register,#signUp .login{
+    margin: 30px 300px 0 0;
+    padding: 0 0 60px 50px;
+    border-left: 1px dashed #bbb;
+}
+#signIn .register a,#signUp .login a{
+    display: block;
+    margin-bottom: 15px;
+}
+
+#signUp #new_user{
+    position:relative;
+    zoom:1;
+}
+#signUp #new_user label{
+    display: inline-block;
+    width:50px;
+}
+
+#signUp #new_user .submitArea{
+    position:absolute;
+    top:50px;
+    left:380px;
+}
+#signUp #new_user .submitArea input{
+    padding: 5px 40px;
+    cursor: pointer;
 }

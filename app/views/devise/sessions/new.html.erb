@@ -1,17 +1,21 @@
-<h2>Sign in</h2>
+<div id="signIn" class="clearfix">
+<h2>用户登录</h2>
 
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
+  <div><%= f.label :email ,"邮箱"%>
+  <%= f.email_field :email ,:placeholder => "请输入邮箱"%></div>
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
+  <div><%= f.label :password ,"密码"%>
+  <%= f.password_field :password ,:placeholder=> "请输入密码" %></div>
 
   <% if devise_mapping.rememberable? -%>
-    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+    <div class="rememberMe"><%= f.check_box :remember_me %> <%= f.label :remember_me ,"记住我"%>
   <% end -%>
 
-  <div><%= f.submit "Sign in" %></div>
+ <%= f.submit "登录" ,:class=>"submit"%>
+      </div>
 <% end %>
-
+ <div class="register right">
 <%= render "links" %>
+   </div>
+</div>
