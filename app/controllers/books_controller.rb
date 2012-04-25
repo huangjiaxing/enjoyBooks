@@ -85,4 +85,8 @@ class BooksController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def see_more_books
+	render "more_books"
+  end
 end

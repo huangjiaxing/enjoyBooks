@@ -80,6 +80,13 @@ $(function () {
                 j.eq(z).css({ "position": "absolute", "top": minH, "left": minKey * boxWidth });
             }
         }
+		figureH =  function(){
+		maxH = Math.max.apply({},h);
+		maxKey = getarraykey(h,maxH);
+		$("#waterFull").height(h[maxKey]);
+		}
+		
+		figureH();
 
         function getarraykey(s, v) {
             for (tag in s) {
@@ -88,7 +95,38 @@ $(function () {
                 }
             }
         };
-
+		
+		function reSort(){
+			var ajaxLoadEle = $("#waterFull").find(".ajaxLoad");
+			var ajaxLen = ajaxLoadEle.length;
+			for(var z= 0 ; z<ajaxLen ; z++){
+				height = Math.floor(Math.random() * 200 + 140); //Math.floor 返回小于或等于它的最大整数
+				ajaxLoadEle.eq(z).find(".boxContent").height(height);
+			}
+			
+			for(var z= 0 ; z<ajaxLen ; z++){
+				boxh = ajaxLoadEle.eq(z).height();
+				minH = Math.min.apply({}, h);
+				minKey = getarraykey(h, minH);
+                h[minKey] += boxh //对应最小的那个盒子的高度加上自己的高度
+                ajaxLoadEle.eq(z).css({ "position": "absolute", "top": minH, "left": minKey * boxWidth }).removeClass("ajaxLoad");
+				figureH();
+				
+			}
+			
+			
+		}
+		
+		$("#seeMoreBooks").click(function(){
+			$.get("see_more_books" , function(data){
+				$(data).find("li").appendTo("#waterFull ul");   //注意此处用find
+				reSort();
+				
+			});
+		});
+		
+		
+		
     })()
 
     $("#evaluation").find(".myComment").hover(function () {
@@ -102,7 +140,7 @@ $(function () {
         e.preventDefault();
         url = $(this).attr("href");
         $.get(url + "/edit", function (data) {
-            $(data).filter("#EditComment").appendTo(".myComment"); 		//$(data)就已经把所有的节点给包起来了，所以用filter
+            $(data).filter("#EditComment").appendTo(".myComment"); 		//$(data)就已经把所有的节点给包起来了，所以用filter,因为它是body下的直接节点，如果不是就用find
             showEditCommentForm();
         });
     });
