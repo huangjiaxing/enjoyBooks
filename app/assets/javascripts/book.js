@@ -62,10 +62,6 @@ $(function () {
         var boxWidth = j.first().width();
         var n = parseInt($("#waterFull").width() / boxWidth);
         var k = j.length;
-        for (var i = 0; i < k; i++) {
-            height = Math.floor(Math.random() * 200 + 140); //Math.floor 返回小于或等于它的最大整数
-            j.eq(i).find(".boxContent").height(height);
-        };
 
         for (var z = 0; z < k; z++) {
             boxh = j.eq(z).height();
@@ -80,10 +76,11 @@ $(function () {
                 j.eq(z).css({ "position": "absolute", "top": minH, "left": minKey * boxWidth });
             }
         }
+		
 		figureH =  function(){
-		maxH = Math.max.apply({},h);
-		maxKey = getarraykey(h,maxH);
-		$("#waterFull").height(h[maxKey]);
+			maxH = Math.max.apply({},h);
+			maxKey = getarraykey(h,maxH);
+			$("#waterFull").height(h[maxKey]);
 		}
 		
 		figureH();
@@ -94,15 +91,11 @@ $(function () {
                     return tag;
                 }
             }
-        };
+        }
 		
 		function reSort(){
 			var ajaxLoadEle = $("#waterFull").find(".ajaxLoad");
 			var ajaxLen = ajaxLoadEle.length;
-			for(var z= 0 ; z<ajaxLen ; z++){
-				height = Math.floor(Math.random() * 200 + 140); //Math.floor 返回小于或等于它的最大整数
-				ajaxLoadEle.eq(z).find(".boxContent").height(height);
-			}
 			
 			for(var z= 0 ; z<ajaxLen ; z++){
 				boxh = ajaxLoadEle.eq(z).height();
@@ -111,18 +104,23 @@ $(function () {
                 h[minKey] += boxh //对应最小的那个盒子的高度加上自己的高度
                 ajaxLoadEle.eq(z).css({ "position": "absolute", "top": minH, "left": minKey * boxWidth }).removeClass("ajaxLoad");
 				figureH();
-				
 			}
-			
-			
 		}
-		
-		$("#seeMoreBooks").click(function(){
-			$.get("see_more_books" , function(data){
-				$(data).find("li").appendTo("#waterFull ul");   //注意此处用find
-				reSort();
 				
-			});
+		j.hover(function(){
+			$(this).siblings().find(".mask").css("z-index","9").stop(true,false).fadeTo(300,.2);
+		},function(){
+			$(".mask").css("z-index","-10").stop(true,false).fadeTo(300 ,0);
+		});
+		
+		$(window).scroll(function(){
+			if($(this).scrollTop() + $(this).height() >= $(document).height()){
+				var totalBooks = $("#waterFull").find("li").length
+				$.get("see_more_books?totalBooks=" + totalBooks  , function(data){
+					$(data).find("li").appendTo("#waterFull ul");   //注意此处用find
+					reSort();
+				});
+			}
 		});
 		
     })()

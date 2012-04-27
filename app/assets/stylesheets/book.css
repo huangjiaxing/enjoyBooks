@@ -77,12 +77,44 @@
 }
 #mainContent #waterFull li{
     width:162px;
+	position:relative;
 }
 #mainContent #waterFull .boxContent{
 	margin:6px;
 	background:#F7F7F7 url("boxsh.gif") no-repeat bottom right;
 	border:1px solid #efeff0;
 	border-bottom:none;
+	position:relative;
+}
+#mainContent #waterFull .leftSide{
+	padding:10px 0 0 60px;
+}
+#mainContent #waterFull .bookName{
+	text-align:center;
+	clear:both;
+	margin-top:5px;
+	font-size:14px;
+}
+
+#mainContent #waterFull .bookInfo{
+	clear:both;
+	padding:5px;
+	margin:7px;
+	text-align:justify;
+	color:#999;
+	background-color:#EEE9E9;
+	border-radius:15px;
+}
+#mainContent #waterFull .userComment{
+	padding:5px;
+	padding-bottom:15px;
+	margin:7px;
+	color:#999;
+}
+#mainContent #waterFull .userComment p{
+	padding:7px 0;
+	border-top:1px dashed #E0E0E0;
+	vertical-align:middle;
 }
 
 #mainContent #showBooks{
@@ -128,11 +160,6 @@
      padding: 15px 10px;
 }
 
-#mainContent .area .leftSide .imageSize{
-    width:70px;
-    height:90px;
-    vertical-align: top;
-}
 #mainContent .area .rightSide {
 	width:270px;
 }

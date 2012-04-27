@@ -1,12 +1,13 @@
 class BooksController < ApplicationController
   layout 'main'
   before_filter :authenticate_user!
-
+	
   # GET /books
   # GET /books.json
   def index
     @books = Book.all
-    @popbooks = Book.limit(8)
+	@popbooks = randth(@books)[0,8]
+	@waterbooks = @books[0,20]
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @books }
@@ -87,6 +88,30 @@ class BooksController < ApplicationController
   end
   
   def see_more_books
-	render "more_books"
+	tmp = params[:totalBooks].to_i
+	@morebooks = Book.all[tmp,10]
+	if @morebooks.blank?
+		render "more_books.js.erb"
+	else
+		render "more_books.html.erb"
+	end
   end
+  
+  def randth(arr)
+	randarr=Array.new
+	tmp=Array.new
+	s=arr.size-1
+	p s
+	for i in 0..s
+		r=rand(s+1)
+	if tmp[r]!=1
+		randarr.push(arr[r])
+		tmp[r]=1
+	else
+		redo
+	end
+		i=i+1
+	end
+		return randarr 
+  end 
 end

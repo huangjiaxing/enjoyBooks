@@ -1,3 +1,27 @@
-<% 5.times do |i| %>
-		<li class="left ajaxLoad" ><div class="boxContent">ajaxLoad</div></li>
-<% end %>
+	<% @morebooks.each do |waterbook| %>
+		<li class="left ajaxLoad">
+			<div class="mask hide"></div>
+			<div class="boxContent clearfix">
+				<div class="leftSide">
+					<%=link_to image_tag(waterbook.imageurl,:class=> "imageSize") ,book_path(waterbook)%>
+				</div>
+				<div class="bookName ellipsis">
+					<%=link_to waterbook.name ,book_path(waterbook) ,:title => "#{waterbook.name}"%>
+				</div>
+				<div class="bookInfo">
+					<p><%= waterbook.otherinfo ||= "暂无" %></p>
+				</div>
+				<div class="userComment">
+					<% (rand(5)+1).times do |i|%>
+						<p>
+						<%= "我是第#{i}条用户评论" %>
+						</p>
+					<% end %>
+				</div>
+				<div class="bookTag">
+					<span class="left">Web</span>
+				</div>
+			</div>
+		</li>
+	<% end %>
+
