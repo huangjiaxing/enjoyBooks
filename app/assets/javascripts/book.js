@@ -125,8 +125,6 @@ $(function () {
 			});
 		});
 		
-		
-		
     })()
 
     $("#evaluation").find(".myComment").hover(function () {
