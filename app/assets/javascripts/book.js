@@ -76,14 +76,14 @@ $(function () {
                 j.eq(z).css({ "position": "absolute", "top": minH, "left": minKey * boxWidth });
             }
         }
-		
-		figureH =  function(){
-			maxH = Math.max.apply({},h);
-			maxKey = getarraykey(h,maxH);
-			$("#waterFull").height(h[maxKey]);
-		}
-		
-		figureH();
+
+        figureH = function () {
+            maxH = Math.max.apply({}, h);
+            maxKey = getarraykey(h, maxH);
+            $("#waterFull").height(h[maxKey]);
+        }
+
+        figureH();
 
         function getarraykey(s, v) {
             for (tag in s) {
@@ -92,37 +92,37 @@ $(function () {
                 }
             }
         }
-		
-		function reSort(){
-			var ajaxLoadEle = $("#waterFull").find(".ajaxLoad");
-			var ajaxLen = ajaxLoadEle.length;
-			
-			for(var z= 0 ; z<ajaxLen ; z++){
-				boxh = ajaxLoadEle.eq(z).height();
-				minH = Math.min.apply({}, h);
-				minKey = getarraykey(h, minH);
+
+        function reSort() {
+            var ajaxLoadEle = $("#waterFull").find(".ajaxLoad");
+            var ajaxLen = ajaxLoadEle.length;
+
+            for (var z = 0; z < ajaxLen; z++) {
+                boxh = ajaxLoadEle.eq(z).height();
+                minH = Math.min.apply({}, h);
+                minKey = getarraykey(h, minH);
                 h[minKey] += boxh //对应最小的那个盒子的高度加上自己的高度
                 ajaxLoadEle.eq(z).css({ "position": "absolute", "top": minH, "left": minKey * boxWidth }).removeClass("ajaxLoad");
-				figureH();
-			}
-		}
-				
-		j.hover(function(){
-			$(this).siblings().find(".mask").css("z-index","9").stop(true,false).fadeTo(300,.2);
-		},function(){
-			$(".mask").css("z-index","-10").stop(true,false).fadeTo(300 ,0);
-		});
-		
-		$(window).scroll(function(){
-			if($(this).scrollTop() + $(this).height() >= $(document).height()){
-				var totalBooks = $("#waterFull").find("li").length
-				$.get("see_more_books?totalBooks=" + totalBooks  , function(data){
-					$(data).find("li").appendTo("#waterFull ul");   //注意此处用find
-					reSort();
-				});
-			}
-		});
-		
+                figureH();
+            }
+        }
+
+        j.hover(function () {
+            $(this).siblings().find(".mask").css("z-index", "9").stop(true, false).fadeTo(300, .2);
+        }, function () {
+            $(".mask").css("z-index", "-10").stop(true, false).fadeTo(300, 0);
+        });
+
+        $(window).scroll(function firstScroll() {
+            if ($(this).scrollTop() + $(this).height() >= $(document).height()) {
+                var totalBooks = $("#waterFull").find("li").length
+                $.get("see_more_books?totalBooks=" + totalBooks, function (data) {
+                    $(data).find("li").appendTo("#waterFull ul");   //注意此处用find
+                    reSort();
+                });
+            }
+        });
+
     })()
 
     $("#evaluation").find(".myComment").hover(function () {
@@ -149,21 +149,42 @@ $(function () {
         _this.css({ "left": -left, "height": height }).animate({ left: -lastLeft + 20 }, "slow");
         _this.find("textarea").height(height - 12);
     }
-	
-	
-	(function() {
-    var $backToTopTxt = "返回顶部", $backToTopEle = $('<div id="backToTop"></div>').appendTo($("body"))
-        .text($backToTopTxt).attr("title", $backToTopTxt).click(function() {
+
+
+    (function () {
+        var $backToTopTxt = "返回顶部", $backToTopEle = $('<div id="backToTop"></div>').appendTo($("body"))
+        .text($backToTopTxt).attr("title", $backToTopTxt).click(function () {
             $("html, body").animate({ scrollTop: 0 }, 120);
-    }), $backToTopFun = function() {
-        var st = $(document).scrollTop(), winh = $(window).height();
-        (st > 0)? $backToTopEle.show(): $backToTopEle.hide();
-        //IE6下的定位
-        if (!window.XMLHttpRequest) {
-            $backToTopEle.css("top", st + winh - 166);
+        }), $backToTopFun = function () {
+            var st = $(document).scrollTop(), winh = $(window).height();
+            (st > 0) ? $backToTopEle.show() : $backToTopEle.hide();
+            //IE6下的定位
+            if (!window.XMLHttpRequest) {
+                $backToTopEle.css("top", st + winh - 166);
+            }
+        };
+        $(window).bind("scroll", $backToTopFun);
+        $(function () { $backToTopFun(); });
+    })();
+
+    $(".tagsNav").find("p").click(function () {
+        $(this).siblings("ul").stop(true, true).slideToggle().parent("div").siblings().find("ul").stop(true, true).slideUp();
+    }).hover(function () {
+        $(this).css({ "background-color": "#ADD8E6", "color": "#fff" });
+    }, function () {
+        $(this).css({ "background-color": "#fff", "color": "#0090B3" });
+     });
+
+    var tagsNavTop = $(".tagsNav").offset().top; //记录初始的top值，用于判断是从上往下滚动，还是从下往上
+    $(document).scroll(function () {
+        if (($(document).scrollTop()) >= $(".tagsNav").offset().top) {
+            $(".tagsNav").css({ "position": "fixed", "top": "0", "margin-top": "0" });
         }
-    };
-    $(window).bind("scroll", $backToTopFun);
-    $(function() { $backToTopFun(); });
-	})();
+        else {
+            $(".tagsNav").css({ "position": "static", "margin-top": "40px" });
+        }
+        if ($(".tagsNav").offset().top <= tagsNavTop) {
+            $(".tagsNav").css({ "position": "static", "margin-top": "40px" });
+        }
+    });
 });

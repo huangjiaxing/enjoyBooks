@@ -257,3 +257,10 @@ input:focus, textarea:focus {
 	background-color:#555;
 	z-index:-10;
 }
+
+.hotTitle{
+    font-size:14px;
+    line-height:1.5;
+    color:#060;
+    margin-bottom:12px;
+}

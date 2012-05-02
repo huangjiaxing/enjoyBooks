@@ -69,6 +69,34 @@
     color:cadetBlue;
 }
 
+#mainContent .tagsNav{
+    margin-top:40px;
+    padding-top:20px;
+    width:260px;
+}
+#mainContent .tagsNav p{
+    font-size:13px;
+    color:#0090B3;
+    padding:1px 0 3px 5px;
+    border-bottom:1px dashed #ddd;
+    cursor:pointer;
+}
+#mainContent .tagsNav div{
+    margin-bottom:15px;
+}
+#mainContent .tagsNav div.techology p{
+    border:0;
+}
+#mainContent .tagsNav ul{
+    height:40px;
+    padding-top:5px;
+}
+#mainContent .tagsNav li{
+    float:left;
+    display:inline;
+    margin:0 5px 0 10px;
+}
+
 #mainContent #waterFull{
     position: relative;
     zoom:1;
