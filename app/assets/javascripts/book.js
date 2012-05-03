@@ -173,7 +173,7 @@ $(function () {
         $(this).css({ "background-color": "#ADD8E6", "color": "#fff" });
     }, function () {
         $(this).css({ "background-color": "#fff", "color": "#0090B3" });
-     });
+    });
 
     var tagsNavTop = $(".tagsNav").offset().top; //记录初始的top值，用于判断是从上往下滚动，还是从下往上
     $(document).scroll(function () {

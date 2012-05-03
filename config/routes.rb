@@ -1,5 +1,7 @@
 Xiangshuwang::Application.routes.draw do
 	
+  match "/profile/:id" => "profiles#index"
+
   match "/book_list/show"  => "book_list#show" ,:via => :post
   match "/see_more_books" => "books#see_more_books"
   

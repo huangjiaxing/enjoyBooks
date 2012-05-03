@@ -7,6 +7,6 @@
 		</span>
 	<% end %>
   </div>
-  <%= link_to "#{current_user.name}的个人空间" ,"#" %>
+  <%= link_to "#{current_user.name}的个人空间" ,"/profile/#{current_user.id}" %>
   <%= link_to "退出" ,users_sign_out_path ,:methods => :destroy %>
 </div>

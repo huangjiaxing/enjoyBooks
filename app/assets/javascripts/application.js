@@ -13,3 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 
+$(function () {
+    $(".notice").delay(3000).hide(0); //hide(0)和hide()不一样，hide有参数 delay才有效
+})

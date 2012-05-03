@@ -1,212 +1,209 @@
 /* 清理浮动 */
-.clearfix:after {
-	visibility:hidden;
-	display:block;
-	font-size:0;
-	content:" ";
-	clear:both;
-	height:0;
+.clearfix:after
+{
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
 }
-.clearfix {
-	zoom:1; /* for IE6 IE7 */
+.clearfix
+{
+    zoom: 1; /* for IE6 IE7 */
 }
 
 /* 隐藏, 通常用来与 JS 配合 */
-body .hide {
-	display:none;
+body .hide
+{
+    display: none;
 }
 
 /* 设置内联, 减少浮动带来的bug */
-.left,.right {
-	display:inline;
+.left, .right
+{
+    display: inline;
 }
-.left {
-	float:left;
+.left
+{
+    float: left;
 }
-.right {
-	float:right;
+.right
+{
+    float: right;
 }
 
 /* 设置字体及其他通用样式 */
-.bold{
+.bold
+{
     font-weight: bold;
 }
 /* 设置devise提示信息的位置 */
-span.notice{
-	font-family:"微软雅黑";
-	font-size:15px;
-	font-weight:bold;
-	color:#ff8066;
-	border:3px solid #e9f5e9;
-	border-radius:8px;
-	padding:2px 15px;
-	position:absolute;
-	left:50%;
-	top:50%;
-	z-index:9999;
-	margin:-17px 0 0 -51px;
-	background-color:#fff;
+span.notice
+{
+    font-family: "微软雅黑";
+    font-size: 15px;
+    color: #f63;
+    border: 2px solid #faefe3;
+    border-radius: 5px;
+    padding: 2px 15px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 9999;
+    margin: -17px 0 0 -51px;
+    background-color: #fff6ed;
 }
 
 /* 通用表单样式 */
 
-input, textarea {
-	padding: 5px;
-	border: solid 1px #E5E5E5;
-	outline: 0;
-	background: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #EEEEEE), to(#FFFFFF));
-	background: -moz-linear-gradient(top, #FFFFFF, #EEEEEE 1px, #FFFFFF 25px);
-	box-shadow: rgba(0,0,0, 0.1) 0 0 8px;
-	}
-
-input:hover, textarea:hover,
-input:focus, textarea:focus {
-	border-color: #C9C9C9;
+input, textarea
+{
+    padding: 5px;
+    border: solid 1px #E5E5E5;
+    outline: 0;
+    background: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #EEEEEE), to(#FFFFFF));
+    background: -moz-linear-gradient(top, #FFFFFF, #EEEEEE 1px, #FFFFFF 25px);
     box-shadow: rgba(0,0,0, 0.1) 0 0 8px;
-	}
+}
 
-.submit input {
-	background: #617798;
-	border: 0;
-	font-size: 14px;
-	color: #ccc;
-	border-radius: 5px;
+input:hover, textarea:hover, input:focus, textarea:focus
+{
+    border-color: #C9C9C9;
+    box-shadow: rgba(0,0,0, 0.1) 0 0 8px;
+}
+
+.submit input
+{
+    background: #617798;
+    border: 0;
+    font-size: 14px;
+    color: #ccc;
+    border-radius: 5px;
     cursor: pointer;
-	}
+}
 
 /*sexy button*/
-.sexybutton {
-	vertical-align: middle;
-	text-shadow: 1px 1px 2px rgba(0,0,0,0.20);
-	background: none;
-	border: none;
-	white-space: nowrap;
-	cursor: pointer;
-	user-select: none;
-	-moz-user-select: none;
-
-	/* Fix extra width padding in IE */
-	_width: 0;
-	overflow: visible;
+.sexybutton
+{
+    vertical-align: middle;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.20);
+    background: none;
+    border: none;
+    white-space: nowrap;
+    cursor: pointer;
+    user-select: none;
+    -moz-user-select: none; /* Fix extra width padding in IE */
+    _width: 0;
+    overflow: visible;
 }
 
-.sexybutton span {
-	display: block;						/* Prevents :active from working in IE--oh well! */
-	height: 24px;
-	padding-right: 12px;
-	background-repeat: no-repeat;
-	background-position: right top;
+.sexybutton span
+{
+    display: block; /* Prevents :active from working in IE--oh well! */
+    height: 24px;
+    padding-right: 12px;
+    background-repeat: no-repeat;
+    background-position: right top;
 }
 
-.sexybutton span span {
-	padding-right: 0;
-	padding-left: 12px;
-	line-height: 24px;
-	background-position: left top;
+.sexybutton span span
+{
+    padding-right: 0;
+    padding-left: 12px;
+    line-height: 24px;
+    background-position: left top;
 }
-.sexybutton span span {
-	background-image: url("button_left.gif");
+.sexybutton span span
+{
+    background-image: url("button_left.gif");
 }
-.sexybutton span {
-	background-image: url("button_right.gif");
-}
-
-.sexybutton span span span {
-	padding-left: 21px;
-	background-image: none;
-	background-repeat: no-repeat;
-	background-position: left center;
-	/* IE6 still requires a PNG transparency fix */
-	/* _background-image: none;		Or just hide icons from the undeserving IE6 */
-	/* _padding-left: 0;					Or just hide icons from the undeserving IE6 */
+.sexybutton span
+{
+    background-image: url("button_right.gif");
 }
 
-.nameLink{color:#8B7B8B;text-shadow: 1px 1px 1px #AAA;text-decoration: none;}
-.ellipsis{overflow: hidden;text-overflow:ellipsis;white-space: nowrap;}
-
-
-.commonButton{
-
-	/* A semi-transparent text shadow */
-	text-shadow:1px 1px 0 rgba(255,255,255,0.4);
-	
-	/* Overriding the default underline styling of the links */
-	text-decoration:none !important;
-	white-space:nowrap;
-	
-	display:inline-block;
-	vertical-align:baseline;
-	position:relative;
-	cursor:pointer;
-	padding:10px 20px;
-	
-	background-repeat:no-repeat;
-
-	/* The following two rules are fallbacks, in case
-	   the browser does not support multiple backgrounds. */
-
-	background-position:bottom left;
-	background-image:url('button_bg.png');
-	
-	/* Multiple backgrounds version. The background images
-	   are defined individually in color classes */
-	
-	background-position:bottom left, top right, 0 0, 0 0;
-	background-clip:border-box;
-	
-	/* Applying a default border raidus of 8px */
-	
-	-moz-border-radius:8px;
-	-webkit-border-radius:8px;
-	border-radius:8px;
-	
-	/* A 1px highlight inside of the button */
-	
-	-moz-box-shadow:0 0 1px #fff inset;
-	-webkit-box-shadow:0 0 1px #fff inset;
-	box-shadow:0 0 1px #fff inset;
-	
-	/* Animating the background positions with CSS3 */
-	/* Currently works only in Safari/Chrome */
-	
-	-webkit-transition:background-position 1s;
-	-moz-transition:background-position 1s;
-	transition:background-position 1s;
+.sexybutton span span span
+{
+    padding-left: 21px;
+    background-image: none;
+    background-repeat: no-repeat;
+    background-position: left center; /* IE6 still requires a PNG transparency fix */ /* _background-image: none;		Or just hide icons from the undeserving IE6 */ /* _padding-left: 0;					Or just hide icons from the undeserving IE6 */
 }
 
-.commonButton:hover{
-	
-	/* The first rule is a fallback, in case the browser
-	   does not support multiple backgrounds
-	*/
-	
-	background-position:top left;
-	background-position:top left, bottom right, 0 0, 0 0;
+.nameLink
+{
+    color: #8B7B8B;
+    text-shadow: 1px 1px 1px #AAA;
+    text-decoration: none;
+}
+.ellipsis
+{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
-.commonButton:active{
-	/* Moving the button 1px to the bottom when clicked */
-	bottom:-1px;
+
+.commonButton
+{
+    /* A semi-transparent text shadow */
+    text-shadow: 1px 1px 0 rgba(255,255,255,0.4); /* Overriding the default underline styling of the links */
+    text-decoration: none !important;
+    white-space: nowrap;
+    display: inline-block;
+    vertical-align: baseline;
+    position: relative;
+    cursor: pointer;
+    padding: 10px 20px;
+    background-repeat: no-repeat; /* The following two rules are fallbacks, in case 	   the browser does not support multiple backgrounds. */
+    background-position: bottom left;
+    background-image: url('button_bg.png'); /* Multiple backgrounds version. The background images 	   are defined individually in color classes */
+    background-position: bottom left, top right, 0 0, 0 0;
+    background-clip: border-box; /* Applying a default border raidus of 8px */
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    border-radius: 8px; /* A 1px highlight inside of the button */
+    -moz-box-shadow: 0 0 1px #fff inset;
+    -webkit-box-shadow: 0 0 1px #fff inset;
+    box-shadow: 0 0 1px #fff inset; /* Animating the background positions with CSS3 */ /* Currently works only in Safari/Chrome */
+    -webkit-transition: background-position 1s;
+    -moz-transition: background-position 1s;
+    transition: background-position 1s;
 }
 
-.gray.commonButton{
-	color:#525252 !important;
-	border:1px solid #a5a5a5 !important;	
-	background-color: #a9adb1;
-	
-	background-image:url('button_bg.png'), url('button_bg.png'), -moz-radial-gradient(center bottom, circle, rgba(197,199,202,1) 0,rgba(197,199,202,0) 100px),-moz-linear-gradient(#c5c7ca, #92989c);
-	background-image:url('button_bg.png'), url('button_bg.png'), -webkit-gradient(radial, 50% 100%, 0, 50% 100%, 100, from(rgba(197,199,202,1)), to(rgba(197,199,202,0))),-webkit-gradient(linear, 0% 0%, 0% 100%, from(#c5c7ca), to(#92989c));
+.commonButton:hover
+{
+    /* The first rule is a fallback, in case the browser 	   does not support multiple backgrounds 	*/
+    background-position: top left;
+    background-position: top left, bottom right, 0 0, 0 0;
 }
 
-.gray.commonButton:hover{
-	background-color:#b6bbc0;
-	
-	background-image:url('button_bg.png'), url('button_bg.png'), -moz-radial-gradient(center bottom, circle, rgba(202,205,208,1) 0,rgba(202,205,208,0) 100px),-moz-linear-gradient(#d1d3d6, #9fa5a9);
-	background-image:url('button_bg.png'), url('button_bg.png'), -webkit-gradient(radial, 50% 100%, 0, 50% 100%, 100, from(rgba(202,205,208,1)), to(rgba(202,205,208,0))),-webkit-gradient(linear, 0% 0%, 0% 100%, from(#d1d3d6), to(#9fa5a9));
+.commonButton:active
+{
+    /* Moving the button 1px to the bottom when clicked */
+    bottom: -1px;
 }
 
-#backToTop{
-	display: none;
+.gray.commonButton
+{
+    color: #525252 !important;
+    border: 1px solid #a5a5a5 !important;
+    background-color: #a9adb1;
+    background-image: url('button_bg.png'), url('button_bg.png'), -moz-radial-gradient(center bottom, circle, rgba(197,199,202,1) 0,rgba(197,199,202,0) 100px),-moz-linear-gradient(#c5c7ca, #92989c);
+    background-image: url('button_bg.png'), url('button_bg.png'), -webkit-gradient(radial, 50% 100%, 0, 50% 100%, 100, from(rgba(197,199,202,1)), to(rgba(197,199,202,0))),-webkit-gradient(linear, 0% 0%, 0% 100%, from(#c5c7ca), to(#92989c));
+}
+
+.gray.commonButton:hover
+{
+    background-color: #b6bbc0;
+    background-image: url('button_bg.png'), url('button_bg.png'), -moz-radial-gradient(center bottom, circle, rgba(202,205,208,1) 0,rgba(202,205,208,0) 100px),-moz-linear-gradient(#d1d3d6, #9fa5a9);
+    background-image: url('button_bg.png'), url('button_bg.png'), -webkit-gradient(radial, 50% 100%, 0, 50% 100%, 100, from(rgba(202,205,208,1)), to(rgba(202,205,208,0))),-webkit-gradient(linear, 0% 0%, 0% 100%, from(#d1d3d6), to(#9fa5a9));
+}
+
+#backToTop
+{
+    display: none;
     width: 18px;
     line-height: 1.2;
     padding: 5px 0;
@@ -224,43 +221,48 @@ input:focus, textarea:focus {
     filter: Alpha(opacity=60);
 }
 
-.bookTag{
-	background:transparent url("TR.png") right 0 no-repeat;
-	position:absolute;
-	height:25px;
-	line-height:1.8;
-	left:-3px;
-	top:20px;
-	opacity:.8;
+.bookTag
+{
+    background: transparent url("TR.png") right 0 no-repeat;
+    position: absolute;
+    height: 25px;
+    line-height: 1.8;
+    left: -3px;
+    top: 20px;
+    opacity: .8;
 }
 
-.bookTag span{
-	padding:0 20px 0 8px;
-	background:none;
-	overflow:hidden;
-	height:100%;
-	color:#fff;
+.bookTag span
+{
+    padding: 0 20px 0 8px;
+    background: none;
+    overflow: hidden;
+    height: 100%;
+    color: #fff;
 }
 
-#mainContent .imageSize{
-    width:70px;
-    height:90px;
+#mainContent .imageSize
+{
+    width: 70px;
+    height: 90px;
     vertical-align: top;
 }
 
-.mask{
-	width:100%;
-	height:100%;
-	position:absolute;
-	left:0;
-	top:0;
-	background-color:#555;
-	z-index:-10;
+.mask
+{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #555;
+    z-index: -10;
 }
 
-.hotTitle{
-    font-size:14px;
-    line-height:1.5;
-    color:#060;
-    margin-bottom:12px;
+.hotTitle
+{
+    font-size: 14px;
+    line-height: 1.5;
+    color: #060;
+    margin-bottom: 12px;
 }
