@@ -1,9 +1,18 @@
+<div id="booksList">
+<h1>搜索结果</h1>
 <ul>
 	<% if @books.blank? %>
 		<div>没有找到相关书籍</div>
 	<% else %>
-	<% @books.each do |book| %>
-		<li><%= book.name %></li>
-	<% end %>
+		<% @books.each do |book| %>
+			<li class="clearfix">
+				<%= link_to image_tag(book.imageurl,:class=>"left"),book_path(book.id)%>
+				<div class="left detail">
+					<%= link_to book.name, book_path(book.id) %>
+					<p><%= book.otherinfo%></p>
+				</div>
+			</li>
+		<% end %>
 	<% end %>
 </ul>
+</div>
