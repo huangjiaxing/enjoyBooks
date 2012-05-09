@@ -10,7 +10,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120503080904) do
+ActiveRecord::Schema.define(:version => 20120509061047) do
+
+  create_table "book_marks", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "book_id"
+    t.string   "bookmark"
+    t.integer  "pagination"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "books", :force => true do |t|
     t.string   "name"

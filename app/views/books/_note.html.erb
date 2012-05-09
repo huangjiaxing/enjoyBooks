@@ -1,0 +1,17 @@
+<div class="note right">
+	<h2 class="hotTitle">增加笔记......</h2>
+	<%= form_for(@note) do |f| %>
+		<input type="hidden" name="book_id" value="<%= @book.id %>" /> 
+		<div class="field">
+			 <%= f.label :pagination ,"页码： " %>
+			 <%= f.text_field :pagination ,:size=>"2" %>  页
+		</div>
+		<div class="field">
+			 <%= f.label :bookmark ,"内容： " %>
+			 <%= f.text_area :bookmark ,:cols=>"40" ,:rows=>"10" %>
+		</div>
+		<div class="submit">
+		<%= f.submit "提交" %>
+		</div>
+	<% end %>
+</div>

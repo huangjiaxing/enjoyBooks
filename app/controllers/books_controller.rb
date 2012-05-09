@@ -21,6 +21,7 @@ class BooksController < ApplicationController
 	@mycomment = Comment.find(:all ,:conditions =>["book_id = ? and user_id = ?", @book.id , current_user.id])
 	@comment = Comment.new
 	@comments = Comment.find(:all , :conditions =>["book_id =? and user_id != ?" ,@book.id ,current_user.id])
+	@note = BookMark.new
     respond_to do |format|
       format.html # show.html.erb
       format.json { render :json => @book }

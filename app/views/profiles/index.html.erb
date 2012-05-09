@@ -1,1 +1,25 @@
-<%= debug @profiles%>
+<div id="profile">
+	<%= render "books/person_profile"%>
+</div>
+<div class="clearfix" id="activity"> 
+	<div class="sns left">
+		<h2 class="hotTitle">
+			我的活动......
+		</h2>
+		<ul>
+			
+		</ul>
+	</div>
+	<div class="bookMark right">
+		<h2 class="hotTitle">
+			我的笔记......
+		</h2>
+		<% @mynotes.each do |note|%>
+			<div class="noteDetail">
+				<h3>书名 ： <%= link_to note.book.name , book_path(note.book) %></h3>
+				<p>页码 ： <%= note.pagination%></p>
+				<p class="myNote">笔记 ： <%= note.bookmark%></p>
+			</div>
+		<% end %>
+	</div>
+</div>

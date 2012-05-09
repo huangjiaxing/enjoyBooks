@@ -175,16 +175,39 @@ $(function () {
         $(this).css({ "background-color": "#fff", "color": "#0090B3" });
     });
 
-    var tagsNavTop = $(".tagsNav").offset().top; //记录初始的top值，用于判断是从上往下滚动，还是从下往上
-    $(document).scroll(function () {
-        if (($(document).scrollTop()) >= $(".tagsNav").offset().top) {
-            $(".tagsNav").css({ "position": "fixed", "top": "0", "margin-top": "0" });
-        }
-        else {
-            $(".tagsNav").css({ "position": "static", "margin-top": "40px" });
-        }
-        if ($(".tagsNav").offset().top <= tagsNavTop) {
-            $(".tagsNav").css({ "position": "static", "margin-top": "40px" });
-        }
-    });
+    if ($(".tagsNav").length) {
+        var tagsNavTop = $(".tagsNav").offset().top; //记录初始的top值，用于判断是从上往下滚动，还是从下往上
+        $(document).scroll(function () {
+            if (($(document).scrollTop()) >= $(".tagsNav").offset().top) {
+                $(".tagsNav").css({ "position": "fixed", "top": "0", "margin-top": "0" });
+            }
+            else {
+                $(".tagsNav").css({ "position": "static", "margin-top": "40px" });
+            }
+            if ($(".tagsNav").offset().top <= tagsNavTop) {
+                $(".tagsNav").css({ "position": "static", "margin-top": "40px" });
+            }
+        });
+    }
+    (function () {
+        $("#profile").find(".mood").hover(function () {
+            $(this).css({ "border": "1px solid #eee", "box-shadow": "0px 1px 1px #ccc inset", "background-color": "#fff" });
+        }, function () {
+            $(this).css({ "border": "0", "box-shadow": "none", "background-color": "#f9f9f9" });
+        }).live("click" ,function () {
+            var context = $(this).text();
+            var width = $(this).outerWidth() - 2;
+            $(this).replaceWith("<input type='text' name='mood' class='moodInput' value= '" + context + "' />")
+            $(".moodInput").width(width).get(0).focus();
+        })
+
+        $("#profile").find(".moodInput").live("blur" ,function () {
+            $.post("change_mood", { "mood": $(".moodInput").val() }, function (data) {
+                alert(data.mood)
+                $(".moodInput").replaceWith("<p class='mood'>" + data.mood + "</p>")
+            })
+        });
+    })()
+
+
 });

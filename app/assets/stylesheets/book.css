@@ -370,24 +370,88 @@ body{
 #booksList li
 {
     margin: 15px 0;
-    padding-bottom:15px;
-    border-bottom:1px dashed #ddd;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #ddd;
 }
 
 #booksList li .detail
 {
-    margin-left:20px;
+    margin-left: 20px;
 }
 
 #booksList li .detail a
 {
-    font-size:14px;
-    letter-spacing:1px;
-    }
+    font-size: 14px;
+    letter-spacing: 1px;
+}
 #booksList li .detail p
 {
-    color:#666;
-    margin-top:8px;
+    color: #666;
+    margin-top: 8px;
+}
+#profile
+{
+    padding: 20px 30px;
+    background-color: #f9f9f9;
+}
+#profile .moodInput
+{
+    display: block;
+    padding: 0;
+    background: #fff;
+}
+
+#activity .sns
+{
+    width: 35%;
+    margin-top: 30px;
+}
+#activity .bookMark
+{
+    width: 60%;
+    margin-top: 30px;
+}
+
+#activity .bookMark .noteDetail
+{
+    padding:0 0 10px 20px;
+    margin-bottom:10px;
+    border-bottom:1px dashed #ddd;
     }
-
-
+#activity .bookMark .noteDetail h3
+{
+    font-size:14px;
+    color:#CD4F39;
+    }
+#activity .bookMark .noteDetail p
+{
+    margin:5px 0;
+    color:#CDC1C5;
+    }
+#activity .bookMark .noteDetail .myNote
+{
+    font-size:13px;
+    margin-top:10px;
+    color:#666;
+    }
+#community
+{
+    clear:both;
+    padding-top:30px;
+    }
+#community .sns
+{
+    width:60%;
+    }
+#community .note
+{
+    width:35%;
+    }
+#community .note .field
+{
+    margin:15px 0;
+    }
+#community .note .field label
+{
+    vertical-align:top;
+    }
