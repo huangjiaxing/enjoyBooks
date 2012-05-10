@@ -8,6 +8,7 @@ class BooksController < ApplicationController
     @books = Book.all
 	@popbooks = randth(@books)[0,8]
 	@waterbooks = @books[0,20]
+	@mood = Profile.find(:all , :conditions =>["user_id = ?" ,current_user.id ]).last.mood
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @books }

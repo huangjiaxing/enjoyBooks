@@ -3,7 +3,8 @@ class ProfilesController < ApplicationController
 	before_filter :authenticate_user!
 	
 	def index
-		@profiles = User.find(params[:id]).profile
+		#@profiles = User.find(params[:id]).profile
+		@mood = Profile.find(:all , :conditions =>["user_id = ?" ,current_user.id ]).last.mood
 		@mynotes = BookMark.find(:all , :conditions => ["user_id = ?" , current_user.id])
 	end
 	

@@ -203,7 +203,6 @@ $(function () {
 
         $("#profile").find(".moodInput").live("blur" ,function () {
             $.post("change_mood", { "mood": $(".moodInput").val() }, function (data) {
-                alert(data.mood)
                 $(".moodInput").replaceWith("<p class='mood'>" + data.mood + "</p>")
             })
         });

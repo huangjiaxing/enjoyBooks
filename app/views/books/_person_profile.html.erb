@@ -1,8 +1,8 @@
 <div class="profile">
    <%= image_tag("headsimage/1.jpg" ,:class=>"peopleHead")  %>
     <div class="peopleInfo">
-      <h3><%= link_to  current_user.name ,"#" ,:class=>"nameLink"%></h3>
-      <p class="mood">用户心情，功能暂不开放</p>
+      <h3><%= link_to  current_user.name ,"/profile/#{current_user.id}" ,:class=>"nameLink"%></h3>
+      <p class="mood"><%= @mood ||= "心情一般" %></p>
       <p class="rank">用户等级，功能暂不开放</p>
     </div>
 </div>
